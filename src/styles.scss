@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: #ebeff4;
+}
+
+.status-icon{
+  width: 15px;
+  height: 15px;
+  margin-right: 14px;
+  &.icon-0{
+    background: url("/assets/icons/Contacting-0.svg") center center no-repeat;
+  }
+  &.icon-1{
+    background: url("/assets/icons/phone.svg") center center no-repeat;
+  }
+  &.icon-2{
+    background: url("/assets/icons/eye.svg") center center no-repeat;
+  }
+  &.icon-3{
+    background: url("/assets/icons/star.svg") center center no-repeat;
+  }
+  &.icon-4{
+    background: url("/assets/icons/cancel.svg") center center no-repeat;
+  }
+}

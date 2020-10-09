@@ -1,0 +1,7 @@
+<div class="statuses-menu" [ngStyle]="{'top': calcTopPosition()}">
+  <div class="status-line" *ngFor="let status of statuses"
+    (click)="onStatusSelected(status)">
+    <div class="status-icon icon-{{status}}"></div>
+    <div class="status">{{status | verboseStatus}}</div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="burger-menu"
+     (click)="toggleMobileNav()"
+     [class.is-closed]="isClosing"
+     [class.is-open]="showNav">
+  <div class="line top"></div>
+  <div class="line mid"></div>
+  <div class="line bot"></div>
+</div>
+
+<div class="mobile-nav-content" [class.opened]="showNav">
+  <ul>
+    <li *ngFor="let item of navItems" [routerLink]="[item.link]"
+      (click)="toggleMobileNav()">
+      <img [src]="'assets/icons/' + item.icon + '.svg'"/>
+      {{item.title}}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,86 @@
+@import "variables";
+
+@mixin desktop-l() {
+  @media #{$desktop-l-query} {
+    @content;
+  }
+}
+
+@mixin desktop-m() {
+  @media #{$desktop-m-query} {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media #{$laptop-query} {
+    @content;
+  }
+}
+
+@mixin laptop-s() {
+  @media #{$laptop-s-query} {
+    @content;
+  }
+}
+
+@mixin tablet($size) {
+  @if($size) {
+    @media #{$size} {
+      @content;
+    }
+  } @else {
+    @media #{$tablet-land} {
+      @content;
+    }
+  }
+}
+
+@mixin iPad() {
+  @media only screen and #{$iPad-query} {
+    @content;
+  }
+}
+
+@mixin iPadPortrait() {
+  @media only screen and #{$iPadPortrait-query} {
+    @content;
+  }
+}
+
+@mixin iPadLand() {
+  @media only screen and #{$iPadLand-query} {
+    @content;
+  }
+}
+
+@mixin phone() {
+  @media #{$phone-query} {
+    @content;
+  }
+}
+
+@mixin phone-s() {
+  @media #{$phone-s-query} {
+    @content;
+  }
+}
+
+@function color($color, $alphaValue: 1) {
+  @return rgba(map_get($colors, $color), $alphaValue);
+}
+
+@mixin popupMenu() {
+  border-radius: 6px;
+  border: 1px solid #C6D0D8;
+  color: color('black');
+  background: #fff;
+  font-size: 14px;
+}
+
+@mixin baseInput() {
+  background: #f5f9fc;
+  border: 1px solid #dbe5eb;
+  border-radius: 5px;
+  color: #728b9b;
+}

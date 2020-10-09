@@ -1,0 +1,30 @@
+$lgRes: 1980px;
+$mdRes: 1280px;
+$sRes: 739px;
+$xsRes: 640px;
+
+$desktop-l-query: "(max-width: 1920px)";
+$desktop-m-query: "(max-width: 1680px)";
+$desktop-s-query: "(max-width: 1366px)";
+$laptop-query: "(max-width: 1280px)";
+$laptop-s-query: "(max-width: 1440px)";
+$tablet-land-m: "(max-width: 1260px)";
+$tablet-land: "(max-width: 1024px)";
+$tablet: "(max-width: 990px)";
+$phone-query: "(max-width: 739px)";
+$phone-s-query: "(max-width: 640px)";
+
+$iPad-query: "(min-device-width : 768px) and (max-device-width : 1024px)";
+$iPadPortrait-query: "(min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : portrait)";
+$iPadLand-query: "(min-device-width : 768px) and (max-device-width : 1024px)  and (orientation : landscape)";
+
+$sideBarWidth: 70px;
+$headerHeight: 60px;
+
+$colors: ('black': rgb(53, 70, 80),
+  'gray': rgb(115, 112, 113),
+  'midGray': rgb(185, 198, 206),
+  'lightGray': rgb(244, 247, 249),
+  'green': rgb(41, 197, 129),
+  'lightBlue': rgb(84, 208, 255),
+  'darkBlue': rgb(38, 78, 102));

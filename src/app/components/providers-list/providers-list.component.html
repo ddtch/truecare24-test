@@ -1,0 +1,70 @@
+<table>
+  <thead>
+    <tr class="header">
+      <th *ngFor="let title of displayedColumns">
+        {{title}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let provider of providers"
+         [class.cancel]="provider.status === 4">
+      <td>
+        <div class="type-icons">
+          <div class="icon"
+               [class.flag]="provider.contracted"
+               [class.dash]="!provider.contracted">
+          </div>
+          <div class="icon"
+               [class.person]="provider.individual"
+               [class.agency]="!provider.individual">
+          </div>
+        </div>
+      </td>
+      <td>
+        <b>{{provider.firstName + ' ' + provider.lastName}}</b>
+      </td>
+      <td>
+        {{provider.email}}
+      </td>
+      <td>
+        {{provider.phone}}
+      </td>
+      <td>
+        {{provider.id}}
+      </td>
+      <td>
+        <div class="options-wrapper">
+          <div class="status-line" (click)="openStatusMenu($event, provider.id)">
+            <div class="status-icon icon-{{provider.status}}"></div>
+            <div class="status">{{provider.status | verboseStatus}}</div>
+          </div>
+
+          <app-statuses-menu *ngIf="selectedProviderId === provider.id && showStatusMenu"
+             appClickOutside (clickOutside)="closeMenus($event)"
+             [status]="provider.status"
+             (statusSelected)="applyNewStatus($event)">
+          </app-statuses-menu>
+
+          <div class="status-buttons">
+            <div class="btn chat-btn">CHAT</div>
+            <div class="btn call-btn">CALL</div>
+            <div class="btn options-btn" (click)="openOptionsMenu($event, provider.id)">
+              <img src="assets/icons/kebab-menu.svg">
+            </div>
+            <app-kebab-menu *ngIf="selectedProviderId === provider.id && showOptionsMenu"
+                            appClickOutside (clickOutside)="closeMenus($event)"
+                            (optionSelected)="doAction($event)">
+            </app-kebab-menu>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-feedback-modal
+  [providerId]="selectedProviderId"
+  *ngIf="showFeedbackModal"
+  (closed)="onFeedbackModalClosed()">
+</app-feedback-modal>

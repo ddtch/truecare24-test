@@ -1,0 +1,22 @@
+@import "../../../mixins";
+
+.kebab-menu-holder{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  z-index: 2;
+  padding: 15px;
+  width: 145px;
+  @include popupMenu();
+
+  .menu-item{
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover{
+      color: color('lightBlue');
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+<ul class="stars" [attr.data-rate]="currentScore">
+  <li class="star" *ngFor="let star of stars;"
+      (click)="setRating(star)" [attr.data-rate]="star">
+  </li>
+</ul>

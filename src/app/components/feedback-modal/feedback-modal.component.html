@@ -1,0 +1,36 @@
+<div class="backdrop" (click)="onCloseClicked($event)"></div>
+<div class="modal-container">
+  <div class="modal-header">
+    <div class="title">
+      {{ delivered ?
+			'Thank you for your feedback!' :
+			'Set the rating and provide the feedback note:' }}
+    </div>
+    <div class="close-btn" (click)="onCloseClicked($event)"></div>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="feedbackForm" *ngIf="!delivered">
+      <app-star-rating
+        (voted)="setRating($event)">
+      </app-star-rating>
+
+      <div class="comment">
+        <textarea formControlName="comment" placeholder="Type here"></textarea>
+      </div>
+
+      <button class="save-btn"
+              [disabled]="!feedbackForm.valid"
+              (click)="sendFeedback()">
+        Save
+      </button>
+    </form>
+
+    <div class="success-message" *ngIf="delivered">
+      <p>Your message has been delivered successfully. Thank you. We will contact you shortly.</p>
+      <button class="save-btn"
+              (click)="onCloseClicked($event)">
+        Ok
+      </button>
+    </div>
+  </div>
+</div>

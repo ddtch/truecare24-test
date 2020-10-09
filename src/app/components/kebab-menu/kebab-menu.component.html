@@ -1,0 +1,6 @@
+<div class="kebab-menu-holder">
+  <div class="menu-item" *ngFor="let item of menuItems"
+       (click)="onOptionSelected(item.type)">
+    {{item.title}}
+  </div>
+</div>

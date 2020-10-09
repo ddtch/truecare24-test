@@ -1,0 +1,142 @@
+@import "../../../mixins";
+
+
+table {
+  border: 0;
+  border-spacing: 0;
+  width: 100%;
+
+  thead {
+    tr {
+      background: color('lightGray');
+      color: #728b9b;
+
+      th {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: 12px;
+        font-weight: normal;
+        text-align: left;
+
+        &:first-child {
+          padding-left: 20px;
+        }
+
+        &:last-child {
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      height: 50px;
+
+      &:nth-child(even) {
+        background: color('lightGray');
+      }
+
+      &.cancel {
+        background: #ffeff2;
+      }
+
+      td {
+        align-items: center;
+        color: color('black');
+        font-size: 14px;
+        padding-right: 40px;
+
+        &:first-child {
+          padding-left: 20px;
+        }
+
+        &:last-child {
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+
+  @include iPadLand() {
+    width: 110vw;
+  }
+  @include iPadPortrait() {
+    width: 150vw;
+  }
+  @include phone() {
+    width: 270vw;
+
+  }
+}
+
+.type-icons{
+  display: flex;
+  .icon{
+    width: 16px;
+    height: 16px;
+    &.flag{
+      background: url("/assets/icons/Contracted.svg") center center no-repeat;
+    }
+    &.person{
+      background: url("/assets/icons/IC.svg") center center no-repeat;
+    }
+    &.dash{
+      background: url("/assets/icons/Non-Contracted.svg") center center no-repeat;
+    }
+    &.agency{
+      background: url("/assets/icons/agency.svg") center center no-repeat;
+    }
+    &:first-child{
+      margin-right: 20px;
+    }
+  }
+}
+.options-wrapper{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.status-line{
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  .status{
+    border-bottom: 1px dashed #b8c5cd;
+    padding-bottom: 2px;
+  }
+}
+
+.status-buttons{
+  display: flex;
+  margin-left: auto;
+  .btn{
+    margin-right: 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    &:last-child{
+      margin-right: 0;
+    }
+    &.chat-btn{
+      background: color('lightBlue');
+      width: 60px;
+    }
+    &.call-btn{
+      background: color('green');
+      width: 60px;
+    }
+    &.options-btn{
+      width: 10px;
+      margin-right: 0;
+    }
+  }
+}

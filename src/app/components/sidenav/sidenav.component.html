@@ -1,0 +1,11 @@
+<div class="bar">
+  <div class="logo" [routerLink]="['/']">
+    <img src="assets/icons/TrueCare24_logo.svg"/>
+  </div>
+  <ul class="nav-items">
+    <li *ngFor="let item of navItems" [routerLink]="[item.link]">
+      <img [src]="'assets/icons/' + item.icon + '.svg'"/>
+      {{item.title}}
+    </li>
+  </ul>
+</div>
